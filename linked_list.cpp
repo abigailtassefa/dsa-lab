@@ -39,7 +39,7 @@ void add_Student_to_beginning(){
 }
 
 
-void insert_Student_at_position(int position){
+void add_Student_at_position(int position){
     Student *temp=new  Student;
     cout<<"Enter name: ";
     cin>>temp-> name;
@@ -68,7 +68,7 @@ void insert_Student_at_position(int position){
 }
 
 
-void printList( Student* head) {
+void printList( Student* head) { //display forward
     
      Student* current = head;
     while (current != nullptr) {
@@ -80,16 +80,22 @@ void printList( Student* head) {
 int main(){
 
 
-
     add_Student_to_end();
     cout<<" Student added to end: ";
     printList(head);
 
     add_Student_to_beginning();
+    cout<<" Student added to the beginning";
+    printList(head);
+
+
+    int pos;
+    cout<<"Enter a position: ";
+    cin>>pos;
+    add_Student_at_position(pos);
+    cout<<"Student added at a position: ";
+    printList(head);
     
-
-
-
 
     return 0;
 
