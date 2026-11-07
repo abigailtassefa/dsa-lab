@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 struct  Student{
@@ -76,13 +77,29 @@ void printList( Student* head) { //display forward
         current = current->next;
     }
 }
+void printListBackwards( Student* head){
+      Student* current = head;
+      vector<int> arr;
+      while (current != nullptr) {
+        for(int i=0; i<arr.size(); i++){
+             arr[i] =(current->ID);}
+            current = current->next;
+        }
+        cout << "Linked_List in reverse order: ";
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            cout << arr[i] << " ";
+        }
 
+
+
+}
 int main(){
 
 
     add_Student_to_end();
     cout<<" Student added to end: ";
     printList(head);
+    printListBackwards(head);
 
     add_Student_to_beginning();
     cout<<" Student added to the beginning";
